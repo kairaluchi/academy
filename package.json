@@ -18,6 +18,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "apollo-server-lambda": "^2.19.0",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.8.0",
@@ -32,6 +33,7 @@
     "gatsby-plugin-styled-components": "^3.7.0",
     "gatsby-source-filesystem": "^2.8.0",
     "gatsby-transformer-sharp": "^2.9.0",
+    "graphql": "^15.4.0",
     "netlify-cms-app": "^2.14.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
