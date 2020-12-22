@@ -116,6 +116,7 @@ const IndexPage = () => {
           😎
         </span>
       </p>
+      <p>Go to <a href="/.netlify/functions/backend">/.netlify/functions/backend</a> to see the function in action</p>
       <ul style={listStyles}>
         <li style={docLinkStyle}>
           <a
