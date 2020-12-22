@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: "academy",
+    title: "Kaira Luchi Academy",
+    siteUrl: `https://www.kairaluchiacademy.com`,
+    description: 'Kaira Luchi Academy',
+    author: '@alexebube'
   },
   plugins: [
     "gatsby-plugin-netlify-cms",
@@ -18,6 +21,15 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
+        name: 'Kaira Luchi Academy',
+        short_name: 'Kaira Luchi',
+        description: 'Kaira Luchi Academy',
+        lang: 'en',
+        start_url: '/',
+        background_color: '#247fe1',
+        theme_color: '#247fe1',
+        display: 'standalone',
+        crossOrigin: 'use-credentials',
         icon: "src/images/icon.png",
       },
     },
