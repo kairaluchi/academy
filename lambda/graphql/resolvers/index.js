@@ -1,8 +1,8 @@
-const { mergeResolvers } = require('@graphql-tools/merge');
+const { mergeResolvers } = require('@graphql-tools/merge')
 const technical = require('./technical')
 
 const resolvers = [
-    technical
+  technical
 ]
 
-module.exports = mergeResolvers(resolvers);
+module.exports = mergeResolvers(resolvers)

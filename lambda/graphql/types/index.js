@@ -1,8 +1,8 @@
-const { mergeTypeDefs } = require('@graphql-tools/merge');
+const { mergeTypeDefs } = require('@graphql-tools/merge')
 const technical = require('./technical')
 
 const types = [
-    technical
+  technical
 ]
 
-module.exports = mergeTypeDefs(types);
+module.exports = mergeTypeDefs(types)
