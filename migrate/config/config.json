@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "example",
+    "database": "triz",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "",
+    "password": null,
+    "database": "triz",
+    "host": "",
+    "dialect": "postgres"
+  }
+}

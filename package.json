@@ -15,7 +15,8 @@
     "clean": "gatsby clean",
     "postinstall": "netlify-lambda install lambda",
     "start:lambda": "netlify-lambda serve lambda --config webpack.functions.js",
-    "build:lambda": "netlify-lambda build lambda --config webpack.functions.js"
+    "build:lambda": "netlify-lambda build lambda --config webpack.functions.js",
+    "start:db": "docker-compose up -d"
   },
   "license": "0BSD",
   "dependencies": {
@@ -44,6 +45,8 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "dotenv-webpack": "^6.0.0",
+    "sequelize-cli": "^6.2.0",
     "webpack-node-externals": "^2.5.2"
   }
 }

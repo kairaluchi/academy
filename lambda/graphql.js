@@ -1,22 +1,18 @@
-const { ApolloServer, gql } = require('apollo-server-lambda');
+const { ApolloServer } = require('apollo-server-lambda');
+const typeDefs = require('./graphql/types')
+const resolvers = require('./graphql/resolvers')
+const { loadModels } = require('./models')
 
-// Construct a schema, using GraphQL schema language
-const typeDefs = gql`
-    type Query {
-        hello: String
-    }
-`;
+const config = {
+    connectionString: process.env.POSTGRES_CONNECTION_STRING
+}
 
-// Provide resolver functions for your schema fields
-const resolvers = {
-    Query: {
-        hello: () => 'Hello world!',
-    },
-};
+const models = loadModels(config)
 
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    context: { ...models },
     playground: true,
     introspection: true,
 });
