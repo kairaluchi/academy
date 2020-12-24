@@ -3,8 +3,6 @@ const typeDefs = require('./graphql/types')
 const resolvers = require('./graphql/resolvers')
 const { loadModels } = require('./models')
 
-const isProd = process.env.NODE_ENV === 'production'
-
 const config = {
   db: {
     username: process.env.DB_USER,
@@ -12,9 +10,13 @@ const config = {
     database: process.env.DB_DATABASE,
     host: process.env.DB_HOST,
     dialect: process.env.DB_DIALECT,
-    port: process.env.DB_PORT,
-    ...isProd && { ssl: true, dialectOptions: { ssl: true } },
+    port: process.env.DB_PORT
   }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  config.db.ssl = true
+  config.db.dialectOptions.ssl = true
 }
 
 const models = loadModels(config)
