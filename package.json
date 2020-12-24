@@ -13,7 +13,6 @@
     "build": "npm run build:lambda && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "postinstall": "netlify-lambda install lambda",
     "start:lambda": "netlify-lambda serve lambda --config webpack.functions.js",
     "build:lambda": "netlify-lambda build lambda --config webpack.functions.js",
     "start:db": "docker-compose up -d",
@@ -43,14 +42,21 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.2.1"
-  },
-  "devDependencies": {
+    "styled-components": "^5.2.1",
     "dotenv-webpack": "^6.0.0",
     "sequelize-cli": "^6.2.0",
     "standard": "^16.0.3",
     "jest": "^26.6.3",
-    "webpack-node-externals": "^2.5.2"
+    "webpack-node-externals": "^2.5.2",
+    "@graphql-tools/load-files": "^6.2.5",
+    "@graphql-tools/merge": "^6.2.6",
+    "apollo-server-lambda": "^2.19.1",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5"
+  },
+  "resolutions": {
+    "graphql": "^14.6.0"
   },
   "standard": {
     "env": [

@@ -4,5 +4,5 @@ const webpack = require('webpack')
 
 module.exports = {
   externals: [nodeExternals()],
-  plugins: [new DotEnv(),  new webpack.IgnorePlugin(/\.\/native/, /\/pg\//)]
+  plugins: [new DotEnv(), new webpack.IgnorePlugin(/\.\/native/, /\/pg\//)]
 }
