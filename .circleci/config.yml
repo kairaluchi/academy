@@ -1,0 +1,35 @@
+version: 2
+references:
+  build: &build
+    docker:
+      - image: circleci/node:12.0
+    steps:
+      - checkout:
+          path: ~/app
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: npm run migrate
+jobs:
+  db-migrate:
+    working_directory: ~/app/migrate
+    <<: *build
+    environment:
+      NODE_ENV: production
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - db-migrate:
+          filters:
+            branches:
+              only: master
