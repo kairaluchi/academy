@@ -13,6 +13,7 @@
     "build": "npm run build:lambda && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "preinstall": "brew install libpq",
     "postinstall": "netlify-lambda install lambda",
     "start:lambda": "netlify-lambda serve lambda --config webpack.functions.js",
     "build:lambda": "netlify-lambda build lambda --config webpack.functions.js",
