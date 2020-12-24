@@ -40,6 +40,7 @@
     "gatsby-transformer-sharp": "^2.9.0",
     "netlify-cms-app": "^2.14.7",
     "netlify-lambda": "^2.0.2",
+    "pg-native": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
