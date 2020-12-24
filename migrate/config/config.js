@@ -15,7 +15,7 @@ module.exports = {
     port: process.env.DB_PORT,
     ssl: true,
     dialectOptions: {
-      "ssl": true
+      ssl: true
     }
   }
 }
