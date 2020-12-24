@@ -16,7 +16,7 @@ const config = {
 
 if (process.env.NODE_ENV === 'production') {
   config.db.ssl = true
-  config.db.dialectOptions.ssl = true
+  config.db.dialectOptions = { ssl: true }
 }
 
 const models = loadModels(config)
