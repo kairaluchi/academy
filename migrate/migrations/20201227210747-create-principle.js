@@ -1,7 +1,7 @@
 'use strict'
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Technicals', {
+    await queryInterface.createTable('Principles', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,7 +12,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
+      },
+      examples: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -25,6 +28,6 @@ module.exports = {
     })
   },
   down: async (queryInterface) => {
-    await queryInterface.dropTable('Technicals')
+    await queryInterface.dropTable('Principles')
   }
 }

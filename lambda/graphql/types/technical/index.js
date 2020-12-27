@@ -1,7 +1,7 @@
 module.exports = `
     type Technical {
-        id: ID
-        name: String
+        id: ID!
+        name: String!
         description: String
     }
     

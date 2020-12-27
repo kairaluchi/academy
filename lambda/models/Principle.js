@@ -1,9 +1,9 @@
 module.exports = ({ sequelize, DataTypes, Model }) => {
-  class Technical extends Model {
+  class Principle extends Model {
     static associate (models) {
     }
   }
-  Technical.init(
+  Principle.init(
     {
       id: {
         type: DataTypes.INTEGER,
@@ -17,16 +17,18 @@ module.exports = ({ sequelize, DataTypes, Model }) => {
         unique: true
       },
       description: {
-        type: DataTypes.STRING
+        type: DataTypes.TEXT
+      },
+      examples: {
+        type: DataTypes.TEXT
       }
-
     },
     {
       sequelize,
-      modelName: 'Technical',
+      modelName: 'Principle',
       timestamps: true,
       indexes: [{ unique: true, fields: ['name'] }]
     }
   )
-  return Technical
+  return Principle
 }
