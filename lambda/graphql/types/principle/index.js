@@ -1,6 +1,6 @@
 module.exports = `
     type Principle {
-        id: ID!
+        id: Int!
         name: String!
         description: String
         examples: String!
@@ -8,7 +8,7 @@ module.exports = `
     
     type Query {
         principles: [Principle]
-        principle(id: ID!): Principle
+        principle(id: Int!): Principle
     }
     
     type Mutation {
@@ -16,6 +16,7 @@ module.exports = `
     }
     
     input AddPrincipleInput {
+        id: Int!
         name: String!
         description: String
         examples: String

@@ -1,13 +1,13 @@
 module.exports = `
     type Technical {
-        id: ID!
+        id: Int!
         name: String!
         description: String
     }
     
     type Query {
         technicals: [Technical]
-        technical(id: ID!): Technical
+        technical(id: Int!): Technical
     }
     
     type Mutation {
@@ -15,6 +15,7 @@ module.exports = `
     }
     
     input AddTechnicalInput {
+        id: Int!
         name: String!
         description: String
     }

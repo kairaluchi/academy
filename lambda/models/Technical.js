@@ -1,6 +1,22 @@
 module.exports = ({ sequelize, DataTypes, Model }) => {
   class Technical extends Model {
     static associate (models) {
+      this.hasMany(models.Contradiction, {
+        foreignKey: 'improveId'
+      })
+      this.hasMany(models.Contradiction, {
+        foreignKey: 'preserveId'
+      })
+      this.belongsToMany(models.Principle, {
+        through: models.Contradiction,
+        foreignKey: 'id',
+        otherKey: 'improveId'
+      })
+      this.belongsToMany(models.Principle, {
+        through: models.Contradiction,
+        foreignKey: 'id',
+        otherKey: 'preserveId'
+      })
     }
   }
   Technical.init(
@@ -8,8 +24,7 @@ module.exports = ({ sequelize, DataTypes, Model }) => {
       id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+        primaryKey: true
       },
       name: {
         type: DataTypes.STRING,
@@ -19,7 +34,6 @@ module.exports = ({ sequelize, DataTypes, Model }) => {
       description: {
         type: DataTypes.STRING
       }
-
     },
     {
       sequelize,

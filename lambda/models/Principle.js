@@ -1,6 +1,14 @@
 module.exports = ({ sequelize, DataTypes, Model }) => {
   class Principle extends Model {
     static associate (models) {
+      this.hasMany(models.Contradiction, {
+        foreignKey: 'principleId'
+      })
+      this.belongsToMany(models.Technical, {
+        through: 'Contradictions',
+        foreignKey: 'id',
+        otherKey: 'principleId'
+      })
     }
   }
   Principle.init(
@@ -8,8 +16,7 @@ module.exports = ({ sequelize, DataTypes, Model }) => {
       id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+        primaryKey: true
       },
       name: {
         type: DataTypes.STRING,
