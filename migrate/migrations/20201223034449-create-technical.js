@@ -24,7 +24,7 @@ module.exports = {
         type: Sequelize.DATE
       }
     })
-    await queryInterface.createIndex('Technicals', ['name'], { name: 'technicalNameIndex' })
+    await queryInterface.addIndex('Technicals', ['name'], { name: 'technicalNameIndex' })
   },
   down: async (queryInterface) => {
     await queryInterface.dropTable('Technicals')
