@@ -4,7 +4,7 @@ module.exports = {
   Query: {
     contradictions: async (rootValue, { improveId, preserveId }, context) => {
       const data = await context.contradiction.findAll({
-        where: { improveId, preserveId },
+        where: { improveId, preserveId }
       })
       return data.reduce((acc, curr) => {
         if (!acc.improveId) acc.improveId = curr.improveId
@@ -12,20 +12,17 @@ module.exports = {
         acc.principleIds = acc.principleIds.concat([curr.principleId])
         return acc
       }, { principleIds: [] })
-    },
+    }
   },
 
   Contradiction: {
     improve: (contradiction, args, context) => {
-      console.log('IMPROVE', contradiction)
       return context.technical.findByPk(contradiction.improveId)
     },
     preserve: (contradiction, args, context) => {
-      console.log('PRESERVE', contradiction)
       return context.technical.findByPk(contradiction.preserveId)
     },
     principles: (contradiction, args, context) => {
-      console.log('PRINCIPLES', contradiction)
       return context.principle.findAll({
         where: {
           id: {
