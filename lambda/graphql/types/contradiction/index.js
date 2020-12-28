@@ -1,14 +1,12 @@
 module.exports = `
     type Contradiction {
-        id: ID!
         improve: Technical!
         preserve: Technical!
         principles: [Principle!]!
     }
     
     type Query {
-        contradictions(improveId: ID!, preserveId: ID!): [Contradiction]
-        contradiction(id: ID!): Contradiction
+        contradictions(improveId: ID!, preserveId: ID!): Contradiction
     }
     
     type Mutation {

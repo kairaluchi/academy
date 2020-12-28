@@ -1,22 +1,6 @@
 module.exports = ({ sequelize, DataTypes, Model }) => {
   class Technical extends Model {
     static associate (models) {
-      this.hasMany(models.Contradiction, {
-        foreignKey: 'improveId'
-      })
-      this.hasMany(models.Contradiction, {
-        foreignKey: 'preserveId'
-      })
-      this.belongsToMany(models.Principle, {
-        through: models.Contradiction,
-        foreignKey: 'id',
-        otherKey: 'improveId'
-      })
-      this.belongsToMany(models.Principle, {
-        through: models.Contradiction,
-        foreignKey: 'id',
-        otherKey: 'preserveId'
-      })
     }
   }
   Technical.init(

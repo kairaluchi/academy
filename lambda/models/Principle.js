@@ -1,14 +1,6 @@
 module.exports = ({ sequelize, DataTypes, Model }) => {
   class Principle extends Model {
     static associate (models) {
-      this.hasMany(models.Contradiction, {
-        foreignKey: 'principleId'
-      })
-      this.belongsToMany(models.Technical, {
-        through: 'Contradictions',
-        foreignKey: 'id',
-        otherKey: 'principleId'
-      })
     }
   }
   Principle.init(
